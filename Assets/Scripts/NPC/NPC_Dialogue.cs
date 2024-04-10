@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 
 public class NPC_Dialogue : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class NPC_Dialogue : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        ShowDialogue();
     }
 
     void ShowDialogue()
