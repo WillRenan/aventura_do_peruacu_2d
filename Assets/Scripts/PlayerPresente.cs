@@ -12,11 +12,17 @@ public class PlayerPresente : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 _directionPP;
     private bool _isRunningPP;
-    private bool isRunningPP;
+   // private bool isRunningPP;
     public Vector2 direction //propriedade para que ocódigo usado para acessar de outro script o valor do _direction que está private
     {
         get { return _directionPP; }
         set { _directionPP = value; }
+    }
+
+    public bool isRunningPP
+    {
+        get { return _isRunningPP; } 
+        set { _isRunningPP = value; }
     }
 
 

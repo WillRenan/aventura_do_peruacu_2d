@@ -18,6 +18,7 @@ public class PlayerAniPresente : MonoBehaviour
     void Update()
     {
         onMove();
+        OnRun();    
     }
     #region Monimentacao
     void onMove()
@@ -42,6 +43,16 @@ public class PlayerAniPresente : MonoBehaviour
             playerPresente.GetComponent<SpriteRenderer>().flipX = true;
         }
         
+    }
+    void OnRun()
+    {
+        if(playerPresente.isRunningPP && 
+            (playerPresente.direction.x > 0 || playerPresente.direction.x<0
+          || playerPresente.direction.y >0 || playerPresente.direction.y<0 ))
+        {
+           // Debug.Log("oi");
+            animPresente.SetInteger("transicao",2);
+        }
     }
     #endregion
 }
