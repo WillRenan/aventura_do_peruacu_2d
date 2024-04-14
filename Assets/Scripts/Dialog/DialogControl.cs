@@ -7,8 +7,6 @@ public class DialogControl : MonoBehaviour
 
 
 {
-
-
     [Header("Components")]
     public GameObject dialogueObj; //objet janela do dialog
     public Image profileSprite; //sprite perfil do personagem 
@@ -21,11 +19,26 @@ public class DialogControl : MonoBehaviour
 
     // variaveis de controle
     private bool isShowing; //para saber se a janela do dialogo está ativa ou não
-    private int index; // quantidade de texto que tem uma fala
+    public int index; // quantidade de texto que tem uma fala
 
-    private string[] sentence;
 
-    // Start is called before the first frame update
+    public string[] sentence;
+
+    public static DialogControl Instance;
+
+    public bool showing
+    {
+        get{ return isShowing; }
+        set { isShowing = value; }
+    }
+
+    private void Awake() //é chamado primiero, antes de todos os outros métodos na hierasquia de scripts
+    {
+        Instance = this;
+    }
+
+
+    // é chamado ao iniciar
     void Start()
     {
         
@@ -39,6 +52,7 @@ public class DialogControl : MonoBehaviour
 
     IEnumerator Typesentence()
     {
+        actorNameText.text = " oi";
         foreach (char letter in sentence[index].ToCharArray())
         {
             speechText.text += letter;
@@ -48,7 +62,24 @@ public class DialogControl : MonoBehaviour
     //pula para a proxima fala
     public void NextSentence()
     {
-
+        if(speechText.text == sentence[index]) //verifica se a frase é a está completa, para que  só funcione se a frase toda foi dita.
+        {
+            if(index < sentence.Length - 1) //verificando se as frases acabaram
+            {
+                index++; //Incrementa para mudar de frases
+                speechText.text = "";
+                //actorNameText.text = "teste";
+                StartCoroutine(Typesentence());
+            }
+            else //executa quando as fases estiveram acabado
+            {
+                speechText.text = "";
+                index = 0;
+                dialogueObj.SetActive(false);
+                sentence = null;
+                isShowing = false;
+            }
+        }
     }
 
     //chamra a fala do npc
