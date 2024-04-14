@@ -24,17 +24,17 @@ public class DialogControl : MonoBehaviour
 
     public string[] sentence;
 
-    public static DialogControl Instance;
+    public static DialogControl instance;
 
-    public bool showing
+    /*public bool showing
     {
         get{ return isShowing; }
         set { isShowing = value; }
-    }
+    }*/
 
     private void Awake() //é chamado primiero, antes de todos os outros métodos na hierasquia de scripts
     {
-        Instance = this;
+        instance = this;
     }
 
 
@@ -52,7 +52,7 @@ public class DialogControl : MonoBehaviour
 
     IEnumerator Typesentence()
     {
-        actorNameText.text = " oi";
+      // actorNameText.text = " oi";
         foreach (char letter in sentence[index].ToCharArray())
         {
             speechText.text += letter;
@@ -77,7 +77,7 @@ public class DialogControl : MonoBehaviour
                 index = 0;
                 dialogueObj.SetActive(false);
                 sentence = null;
-                isShowing = false;
+                //isShowing = false;
             }
         }
     }

@@ -42,9 +42,12 @@ public class BuildEditos : Editor
         Languages l = new Languages();//criando objetos
         l.portugues = df.sentence;
 
+        
+
         Sentences s = new Sentences();//criando objetos
         s.profile = df.speakActorSprite;
         s.sentence = l;
+        //s.actorName = df.actor.name;
 
         if(GUILayout.Button("Create Dialogue")) //quando clica no botão add a fala
         {
