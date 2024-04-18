@@ -21,11 +21,16 @@ public class NPC_Dialogue : MonoBehaviour
     void Start()
     {
         GetTextNPCInfo();
+        dialogueControl = GetComponent<DialogControl>();
+
     }
     private void Update()//chamado a cada frame
     {
         if( Input.GetKeyDown(KeyCode.E) && playerHit == true) { //verifica se o jogado está dentro do espaço de conversa e se ele aperta a letra E
             DialogControl.instance.Speach(sentences.ToArray());
+        }else if (playerHit == true)
+        {
+            dialogueControl.OnCleanDialogue();
         }
     }
     void GetTextNPCInfo()
@@ -54,10 +59,14 @@ public class NPC_Dialogue : MonoBehaviour
         else
         {
 
-            // Debug.Log("saiu");
+            Debug.Log("saiu");
+            
             playerHit = false;
-          // DialogControl.instance.dialogueObj.SetActive(false); //desativando janela de dialogo
-          // DialogControl.instance.dialogueObj.SetActive(false); //desativando janela de dialogo
+
+            //
+            //dialogueControl.OnCleanDialogue(); 
+            // DialogControl.instance.dialogueObj.SetActive(false); //desativando janela de dialogo
+
 
 
         }

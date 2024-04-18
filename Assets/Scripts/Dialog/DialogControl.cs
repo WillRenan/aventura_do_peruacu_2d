@@ -18,7 +18,7 @@ public class DialogControl : MonoBehaviour
     public float typingSpeed; //velociadade da fala
 
     // variaveis de controle
-    private bool isShowing; //para saber se a janela do dialogo está ativa ou não
+    public bool isShowing; //para saber se a janela do dialogo está ativa ou não
     public int index; // quantidade de texto que tem uma fala
 
 
@@ -73,13 +73,17 @@ public class DialogControl : MonoBehaviour
             }
             else //executa quando as fases estiveram acabado
             {
-                speechText.text = "";
-                index = 0;
-                dialogueObj.SetActive(false);
-                sentence = null;
-                //isShowing = false;
+                OnCleanDialogue();
             }
         }
+    }
+    public void OnCleanDialogue()
+    {
+        speechText.text = "";
+        index = 0;
+        dialogueObj.SetActive(false);
+        sentence = null;
+        isShowing = false;
     }
 
     //chamra a fala do npc
