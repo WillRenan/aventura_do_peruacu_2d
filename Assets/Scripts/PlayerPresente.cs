@@ -12,7 +12,9 @@ public class PlayerPresente : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 _directionPP;
     private bool _isRunningPP;
-   // private bool isRunningPP;
+    // private bool isRunningPP;
+
+    [SerializeField] private ParticleSystem poeira;
     public Vector2 direction //propriedade para que ocódigo usado para acessar de outro script o valor do _direction que está private
     {
         get { return _directionPP; }
@@ -31,6 +33,7 @@ public class PlayerPresente : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         inicialSpeedPP = speedPP;
+        poeira.GetComponent<ParticleSystem>();
 
     }
 
@@ -55,16 +58,40 @@ public class PlayerPresente : MonoBehaviour
     }
     void OnRun()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (_directionPP.x >0 || _directionPP.x < 0)  || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
         {
             speedPP = runSpeedPP;
             isRunningPP = true;
+            //CreateDust();
+            
+            poeira.Play();
+            poeira.loop = true;
+            
+            
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))//quando  solta o Shift reduz velocidade ao player
         {
             speedPP = inicialSpeedPP;
             isRunningPP = false;
+            poeira.Stop();
+            poeira.loop = false;
+            
+            
         }
     }
+   /* [System.Obsolete]
+    void CreateDust() //play na poeira dos pes do personagens
+    {
+        poeira.Play();
+       
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
+        {
+            poeira.loop = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))//quando  solta o Shift reduz velocidade ao player
+        {
+            poeira.loop = false;
+        }
+    }*/
     #endregion
 }

@@ -7,6 +7,8 @@ public class PlayerAniPresente : MonoBehaviour
     private PlayerPresente playerPresente;
     private Animator animPresente;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,11 @@ public class PlayerAniPresente : MonoBehaviour
         {
            // Debug.Log("oi");
             animPresente.SetInteger("transicao",2);
+            
+
         }
     }
+
+   
     #endregion
 }
