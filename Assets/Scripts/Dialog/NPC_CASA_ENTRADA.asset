@@ -22,7 +22,7 @@ MonoBehaviour:
       portugues: "Recep\xE7\xE3o do parque"
       english: 
   - actorName: Will
-    profile: {fileID: 0}
+    profile: {fileID: 21300000, guid: 10c19acd55980084a8a672808637f90d, type: 3}
     sentence:
       portugues: "\xC9 aqui onde as trilhas come\xE7am."
       english: 
