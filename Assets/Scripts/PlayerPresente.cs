@@ -14,6 +14,10 @@ public class PlayerPresente : MonoBehaviour
     private bool _isRunningPP;
     // private bool isRunningPP;
 
+    public DialogControl dialoqueControl;
+    private NPC_Dialogue NPC_Dialogue;
+    
+
     [SerializeField] private ParticleSystem poeira;
     public Vector2 direction //propriedade para que ocódigo usado para acessar de outro script o valor do _direction que está private
     {
@@ -35,13 +39,17 @@ public class PlayerPresente : MonoBehaviour
         inicialSpeedPP = speedPP;
         poeira.GetComponent<ParticleSystem>();
 
+       // dialoqueControl = GetComponent<DialogControl>();
+
     }
 
     // Update is called once per frame
+   // [System.Obsolete]
     void Update()
     {
         OnInput();
         OnRun();
+        OnPlayerIsTalking();
     }
     private void FixedUpdate()
     {
@@ -56,6 +64,8 @@ public class PlayerPresente : MonoBehaviour
     {
         rb.MovePosition(rb.position + _directionPP * speedPP * Time.fixedDeltaTime);
     }
+
+    [System.Obsolete]
     void OnRun()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && (_directionPP.x >0 || _directionPP.x < 0)  || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
@@ -79,19 +89,14 @@ public class PlayerPresente : MonoBehaviour
             
         }
     }
-   /* [System.Obsolete]
-    void CreateDust() //play na poeira dos pes do personagens
+    void OnPlayerIsTalking()
     {
-        poeira.Play();
-       
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
+        if(dialoqueControl.isShowing )
         {
-            poeira.loop = true;
+            speedPP = 0f;
+
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))//quando  solta o Shift reduz velocidade ao player
-        {
-            poeira.loop = false;
-        }
-    }*/
+        
+    }
     #endregion
 }

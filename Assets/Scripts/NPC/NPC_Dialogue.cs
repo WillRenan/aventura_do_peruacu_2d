@@ -13,10 +13,13 @@ public class NPC_Dialogue : MonoBehaviour
     public DialogControl dialogueControl;
     public bool playerHit;
 
-    private List<string> sentences = new List<string>();    
+    private List<string> sentences = new List<string>();
+    private List<string> actorName = new List<string>();
+    private List<Sprite> actorProfile = new List<Sprite>();
 
     
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,8 @@ public class NPC_Dialogue : MonoBehaviour
     private void Update()//chamado a cada frame
     {
         if( Input.GetKeyDown(KeyCode.E) && playerHit == true) { //verifica se o jogado está dentro do espaço de conversa e se ele aperta a letra E
-            DialogControl.instance.Speach(sentences.ToArray());
+            DialogControl.instance.Speach(sentences.ToArray(),actorName.ToArray(), actorProfile.ToArray());
+            
         }else if (playerHit == true)
         {
             dialogueControl.OnCleanDialogue();
@@ -38,7 +42,14 @@ public class NPC_Dialogue : MonoBehaviour
         for(int i = 0; i< dialogue.dialogos.Count; i++)
         {
             sentences.Add(dialogue.dialogos[i].sentence.portugues);
+
+            actorName.Add(dialogue.dialogos[i].actorName);//pegando nome do ator, que vem do dialogue.dialogos no Dialogue Config
+            actorProfile.Add(dialogue.dialogos[i].profile);
         }
+
+        
+
+
     }
 
     // 
@@ -59,7 +70,7 @@ public class NPC_Dialogue : MonoBehaviour
         else
         {
 
-            Debug.Log("saiu");
+            //Debug.Log("saiu");
             
             playerHit = false;
 
