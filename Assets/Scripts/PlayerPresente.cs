@@ -99,6 +99,10 @@ public class PlayerPresente : MonoBehaviour
                 
                 isMolhando = true;
                 speedPP = 0f;
+               // if (isMolhando)
+               // {
+                    playerItens.totalAgua -= 1f;
+                //}
             }
             if (Input.GetMouseButtonUp(0) || playerItens.totalAgua < 0)
             {
@@ -106,10 +110,7 @@ public class PlayerPresente : MonoBehaviour
                 speedPP =inicialSpeedPP;
             }
 
-            if (isMolhando) 
-            {
-                playerItens.totalAgua -= 0.01f;
-            }
+            
 
 
         }
@@ -122,7 +123,8 @@ public class PlayerPresente : MonoBehaviour
         if (collision.CompareTag("LIXO"))
         {
             Destroy(collision.gameObject);
-            contItensColetaveis++;
+            //contItensColetaveis++;
+            playerItens.quantidadeLixoPego++;
         }
     }
 

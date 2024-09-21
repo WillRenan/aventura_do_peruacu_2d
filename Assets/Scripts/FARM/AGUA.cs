@@ -5,7 +5,7 @@ using UnityEngine;
 public class AGUA : MonoBehaviour
 {
     [SerializeField] private bool detectaPlayer;
-    [SerializeField] private int valorAgua;
+    [SerializeField] private int valorAgua = 1;
     private PlayerItens player;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class AGUA : MonoBehaviour
     {
         if (detectaPlayer && Input.GetKeyDown(KeyCode.E))
         {
-            player.LimiteAgua(valorAgua);
+            player.LimiteAgua(valorAgua );
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -6,9 +6,10 @@ public class PlayerItens : MonoBehaviour
 {
     public float totalAgua;
 
-    public float limiteAgua = 50f;
+    public float limiteAgua = 20f;
 
     public int quantidadeFogoApagado = 0;
+    public int quantidadeLixoPego = 0;
 
     void Update()
     {
@@ -23,6 +24,10 @@ public class PlayerItens : MonoBehaviour
         if (totalAgua < limiteAgua)
         {
             totalAgua += agua;
+            if (totalAgua > limiteAgua) 
+            {
+                totalAgua = limiteAgua; 
+            }
         }
     }
 }
