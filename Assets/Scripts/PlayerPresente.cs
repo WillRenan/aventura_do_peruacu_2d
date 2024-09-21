@@ -14,8 +14,16 @@ public class PlayerPresente : MonoBehaviour
     private bool _isRunningPP;
     // private bool isRunningPP;
 
+    private int objMao;//mostra qual objeto esta na mão dopersonagem
+
+    public int contItensColetaveis;
+
+    private bool _isMolhando;
+
     public DialogControl dialoqueControl;
     private NPC_Dialogue NPC_Dialogue;
+
+    private PlayerItens playerItens;
     
 
     [SerializeField] private ParticleSystem poeira;
@@ -30,6 +38,11 @@ public class PlayerPresente : MonoBehaviour
         get { return _isRunningPP; } 
         set { _isRunningPP = value; }
     }
+    public bool isMolhando
+    {
+        get { return _isMolhando; }
+        set { _isMolhando = value; }
+    }
 
 
     // Start is called before the first frame update
@@ -39,6 +52,9 @@ public class PlayerPresente : MonoBehaviour
         inicialSpeedPP = speedPP;
         poeira.GetComponent<ParticleSystem>();
 
+        playerItens = GetComponent<PlayerItens>();
+
+        contItensColetaveis = 0;
        // dialoqueControl = GetComponent<DialogControl>();
 
     }
@@ -47,16 +63,74 @@ public class PlayerPresente : MonoBehaviour
    // [System.Obsolete]
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            objMao = 1;
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            objMao = 2;
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            objMao = 3;
+        }
+
+        if (playerItens.quantidadeFogoApagado == 2)
+        {
+            Debug.Log("Apagou tudo!");
+        }
+
         OnInput();
         OnRun();
         OnPlayerIsTalking();
+        OnMolhando();
     }
     private void FixedUpdate()
     {
         onMove();
     }
+    void OnMolhando()
+    {
+        if (objMao == 1 )
+        {
+            if (Input.GetMouseButtonDown(0) && playerItens.totalAgua > 0)
+            {
+                
+                isMolhando = true;
+                speedPP = 0f;
+            }
+            if (Input.GetMouseButtonUp(0) || playerItens.totalAgua < 0)
+            {
+                isMolhando = false;
+                speedPP =inicialSpeedPP;
+            }
+
+            if (isMolhando) 
+            {
+                playerItens.totalAgua -= 0.01f;
+            }
+
+
+        }
+    }
+
+    #region Coletaveis
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("LIXO"))
+        {
+            Destroy(collision.gameObject);
+            contItensColetaveis++;
+        }
+    }
+
+
+    #endregion
+
     #region MovementPP
-     void OnInput()
+    void OnInput()
     {
         _directionPP = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }

@@ -7,6 +7,9 @@ public class PlayerAniPresente : MonoBehaviour
     private PlayerPresente playerPresente;
     private Animator animPresente;
 
+
+    
+
     
 
     // Start is called before the first frame update
@@ -19,6 +22,9 @@ public class PlayerAniPresente : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+       
+
         onMove();
         OnRun();    
     }
@@ -34,9 +40,13 @@ public class PlayerAniPresente : MonoBehaviour
             animPresente.SetInteger("transicao", 0);
         }
 
+        if (playerPresente.isMolhando)  //molhando
+        {
+            animPresente.SetInteger("transicao", 3);
+        }
 
         // fly
-        if(playerPresente.direction.x > 0 )
+        if (playerPresente.direction.x > 0 )
         {
             playerPresente.GetComponent<SpriteRenderer>().flipX = false;
         }
