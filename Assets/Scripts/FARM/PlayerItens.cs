@@ -30,4 +30,11 @@ public class PlayerItens : MonoBehaviour
             }
         }
     }
+
+
+    public void ResetItens()
+    {
+        quantidadeFogoApagado = 0;
+        quantidadeLixoPego = 0;
+    }
 }
