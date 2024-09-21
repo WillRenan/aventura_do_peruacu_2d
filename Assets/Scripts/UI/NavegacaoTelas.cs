@@ -27,7 +27,7 @@ public class NavegacaoTelas : MonoBehaviour
     void Update()
     {
 
-        if (playerItens.quantidadeFogoApagado == 8 && playerItens.quantidadeLixoPego == 12)
+        if (playerItens.quantidadeFogoApagado == 9 && playerItens.quantidadeLixoPego == 12)
         {
             //playerPresente.transform.position = posicaoInicial;
             //playerItens.ResetItens();
