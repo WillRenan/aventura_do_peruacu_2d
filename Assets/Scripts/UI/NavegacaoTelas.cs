@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NavegacaoTelas : MonoBehaviour
 {
     public Transform pauseMenu;
+    public Transform fimJogo;
     // Start is called before the first frame update
     private PlayerItens playerItens;
     public GameObject playerPresente;
@@ -25,6 +26,19 @@ public class NavegacaoTelas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (playerItens.quantidadeFogoApagado == 8 && playerItens.quantidadeLixoPego == 12)
+        {
+            //playerPresente.transform.position = posicaoInicial;
+            //playerItens.ResetItens();
+            fimJogo.gameObject.SetActive(true);
+
+            //SceneManager.LoadScene("FimDoJogo");
+
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (pauseMenu.gameObject.activeSelf) {
@@ -49,9 +63,9 @@ public class NavegacaoTelas : MonoBehaviour
     {
        
         Time.timeScale = 1;
-       //ResetarPosicao();
-        playerItens.ResetItens();
+        //ResetarPosicao();
         playerPresente.transform.position = posicaoInicial;
+        playerItens.ResetItens();
         SceneManager.LoadScene("MenuPrincipal");
     }
     public void Sair()

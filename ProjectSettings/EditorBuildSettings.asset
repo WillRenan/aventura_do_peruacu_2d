@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Presente.unity
     guid: 995a36806a883d34eb395faaee81a1b5
+  - enabled: 1
+    path: Assets/Scenes/FimDoJogo.unity
+    guid: a9ec7bb6cc430384e9f1adfc46626cc5
   m_configObjects: {}
