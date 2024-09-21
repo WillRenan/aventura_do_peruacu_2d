@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
+    public Transform painelSobre;
     // Start is called before the first frame update
     public void Jogar()
     {
@@ -17,5 +18,11 @@ public class MenuPrincipal : MonoBehaviour
         Application.Quit();
     }
 
-    
+    public void SobreBtn()
+    {
+        painelSobre.gameObject.SetActive(true);
+    }public void VoltarBtn()
+    {
+        painelSobre.gameObject.SetActive(false);
+    }
 }
