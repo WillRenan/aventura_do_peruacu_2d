@@ -95,7 +95,7 @@ public class DialogControl : MonoBehaviour
         isShowing = false;
     }
 
-    //chamra a fala do npc
+    //chamar a fala do npc
     public void Speach(string[] txt, string[] actorName, Sprite[] actorProfile)
     {
         if (!isShowing)

@@ -3342,7 +3342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "Parque Nacional Canvernas do Perua\xE7u\n(PNCP)"
+  m_Text: "Parque Nacional Cavernas do Perua\xE7u\n(PNCP)"
 --- !u!222 &2012576206
 CanvasRenderer:
   m_ObjectHideFlags: 0

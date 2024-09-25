@@ -84,7 +84,7 @@ public class PlayerPresente : MonoBehaviour
 
         OnInput();
         OnRun();
-        OnPlayerIsTalking();
+       // OnPlayerIsTalking();
         OnMolhando();
     }
     private void FixedUpdate()
@@ -99,7 +99,7 @@ public class PlayerPresente : MonoBehaviour
             {
                 
                 isMolhando = true;
-                speedPP = 0f;
+                speedPP = 0f;//para  o personagem ficar parado enquanto molha
                // if (isMolhando)
                // {
                     playerItens.totalAgua -= 1f;
@@ -108,7 +108,7 @@ public class PlayerPresente : MonoBehaviour
             if (Input.GetMouseButtonUp(0) || playerItens.totalAgua < 0)
             {
                 isMolhando = false;
-                speedPP =inicialSpeedPP;
+                speedPP =inicialSpeedPP; // pra ele voltar a andar
             }
 
             
@@ -138,14 +138,16 @@ public class PlayerPresente : MonoBehaviour
         _directionPP = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
     void onMove()
-    {
+    {   
+        if(dialoqueControl.isShowing == false) { 
         rb.MovePosition(rb.position + _directionPP * speedPP * Time.fixedDeltaTime);
+        }
     }
 
     [System.Obsolete]
     void OnRun()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && (_directionPP.x >0 || _directionPP.x < 0)  || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (_directionPP.x >0 || _directionPP.x < 0 )  || Input.GetKeyDown(KeyCode.RightShift)) //quando apertar o Shift adiciona velocidade ao player
         {
             speedPP = runSpeedPP;
             isRunningPP = true;
@@ -172,6 +174,10 @@ public class PlayerPresente : MonoBehaviour
         {
             speedPP = 0f;
 
+        }
+        else
+        {
+            speedPP = inicialSpeedPP;
         }
         
     }
