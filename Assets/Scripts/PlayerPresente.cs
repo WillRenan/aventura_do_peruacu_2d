@@ -60,7 +60,8 @@ public class PlayerPresente : MonoBehaviour
     }
 
     // Update is called once per frame
-   // [System.Obsolete]
+    // [System.Obsolete]
+    [System.Obsolete]
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))

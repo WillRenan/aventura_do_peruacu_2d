@@ -7,7 +7,7 @@ public class HudController : MonoBehaviour
 {
     [SerializeField] private Image aguaUI;
     public Text lixoUI;
-    [SerializeField] private Text fogoUI;
+    public Text fogoUI;
     public string contLixo;
 
     private PlayerItens playerItens;

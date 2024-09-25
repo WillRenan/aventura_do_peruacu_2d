@@ -7,6 +7,7 @@ public class MenuPrincipal : MonoBehaviour
 {
     public Transform painelSobre;
     public Transform painelHistoria;
+    public Transform painelParque;
     // Start is called before the first frame update
     public void Jogar()
     {
@@ -21,6 +22,10 @@ public class MenuPrincipal : MonoBehaviour
 
         Application.Quit();
     }
+    public void Parque()
+    {
+        painelParque.gameObject.SetActive(true);
+    }
 
     public void SobreBtn()
     {
@@ -29,5 +34,6 @@ public class MenuPrincipal : MonoBehaviour
     {
         painelSobre.gameObject.SetActive(false);
         painelHistoria.gameObject.SetActive(false);
+        painelParque.gameObject.SetActive(false);
     }
 }

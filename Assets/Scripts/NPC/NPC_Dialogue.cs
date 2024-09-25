@@ -34,7 +34,7 @@ public class NPC_Dialogue : MonoBehaviour
             
         }else if (playerHit == true)
         {
-            dialogueControl.OnCleanDialogue();
+          //  dialogueControl.OnCleanDialogue();
         }
     }
     void GetTextNPCInfo()
