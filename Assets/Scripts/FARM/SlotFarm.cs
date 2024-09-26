@@ -10,6 +10,7 @@ public class SlotFarm : MonoBehaviour
     [SerializeField] private Sprite fogo;
     [SerializeField] private Sprite madeiraQueimada;
     [SerializeField] private float vidaFogo = 10f;
+    [SerializeField] private CircleCollider2D boxCollider;
 
     private PlayerItens playerItens;
 
@@ -17,6 +18,7 @@ public class SlotFarm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boxCollider = GetComponent<CircleCollider2D>();
         playerItens = FindObjectOfType<PlayerItens>();
     }
 
@@ -34,8 +36,9 @@ public class SlotFarm : MonoBehaviour
         {
             
             spriteRender.sprite = madeiraQueimada; //SUBSTITUI O SPRITE DE FOGO PELO DE MADEIRA QUEIMADA
+
             playerItens.quantidadeFogoApagado += 1;
-           
+           boxCollider.enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -14,7 +14,7 @@ public class PlayerPresente : MonoBehaviour
     private bool _isRunningPP;
     // private bool isRunningPP;
 
-    private int objMao;//mostra qual objeto esta na mão dopersonagem
+    public int objMao;//mostra qual objeto esta na mão dopersonagem
 
     public int contItensColetaveis;
 
@@ -66,14 +66,18 @@ public class PlayerPresente : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
+
+           // Debug.Log("Mudou pro 1");
             objMao = 1;
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
+           // Debug.Log("Mudou pro 2");
             objMao = 2;
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
+           // Debug.Log("Mudou pro 3");
             objMao = 3;
         }
 
