@@ -7,10 +7,15 @@ public class PlayerAniPresente : MonoBehaviour
     private PlayerPresente playerPresente;
     private Animator animPresente;
 
+    private DialogControl dialogControl;
+
 
     
 
-    
+    private void Awake()
+    {
+        dialogControl = FindObjectOfType<DialogControl>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +45,7 @@ public class PlayerAniPresente : MonoBehaviour
             animPresente.SetInteger("transicao", 0);
         }
 
-        if (playerPresente.isMolhando)  //molhando
+        if (playerPresente.isMolhando && !dialogControl.isShowing )  //molhando
         {
             animPresente.SetInteger("transicao", 3);
         }

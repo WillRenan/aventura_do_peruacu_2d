@@ -99,7 +99,7 @@ public class PlayerPresente : MonoBehaviour
     {
         if (objMao == 1 )
         {
-            if (Input.GetMouseButtonDown(0) && playerItens.totalAgua > 0)
+            if (Input.GetMouseButtonDown(0) && playerItens.totalAgua > 0 && !dialoqueControl.isShowing)
             {
                 
                 isMolhando = true;
