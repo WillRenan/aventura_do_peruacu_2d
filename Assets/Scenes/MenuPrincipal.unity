@@ -1633,7 +1633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &959508631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2359,7 +2359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b9d61bda80dad8040a69d1469739a88f, type: 3}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -2371,18 +2371,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.26
-  m_Text: "Viajando, dentro tem alunos do ensino m\xE9dio de uma escola da regi\xE3o
-    de Janu\xE1ria, os personagem s\xE3o conhecidos nessa escolar como sendo da turma
-    do Android, pois s\xE3o crian\xE7as que curtem jogos e computadores.\n\nPor isso
-    nunca se interessaram muito pelas aulas de Biologia e Geografia em que era falado
-    sobre a biodiversidade da regi\xE3o do Norte de Minas Gerais em especial da regi\xE3o
-    da sua cidade.\n\nMas agora a hist\xF3ria \xE9 diferente, para que n\xE3o repitam
-    de ano eles precisam apresentar um trabalho final sobre essa mat\xE9ria. Para
-    inspirar a classe toda, a professora Dena organizou uma expedi\xE7\xE3o para
-    visitar o Parque Nacional Cavernas do Perua\xE7u, e assim come\xE7a a jornada.\r\n\nChegando,
-    logo percebem que o parque precisa de ajuda!  O lixo e as queimadas  poder destruir 
-    toda a beleza natuaral e biodiversidade do parque, e ele N\xC3O V\xC3O DEIXAR
-    ISSO ACONTECER!!\n"
+  m_Text: "Viajando dentro do \xF4nibus... Alunos do ensino m\xE9dio de uma escola
+    IFNMG Janu\xE1ria,  s\xE3o conhecidos como sendo a turma do Android, pois s\xE3o
+    crian\xE7as que curtem jogos e computadores.\n\nPor isso nunca se interessaram
+    muito pelas aulas de Biologia e Geografia em que era falado sobre a biodiversidade
+    da regi\xE3o do Norte de Minas Gerais em especial da regi\xE3o da sua cidade.\n\nMas
+    agora a hist\xF3ria \xE9 diferente, para que n\xE3o repitam de ano eles precisam
+    apresentar um trabalho final sobre essa mat\xE9ria. Para inspirar a classe toda,
+    a professora Dena organizou uma expedi\xE7\xE3o para visitar o Parque Nacional
+    Cavernas do Perua\xE7u, e assim come\xE7a a jornada.\r\n\nChegando, logo percebem
+    que o parque precisa de ajuda!  O lixo e as queimadas  poder destruir  toda a
+    beleza natuaral e biodiversidade do parque, e ele N\xC3O V\xC3O DEIXAR ISSO ACONTECER!!\n"
 --- !u!222 &1632021021
 CanvasRenderer:
   m_ObjectHideFlags: 0

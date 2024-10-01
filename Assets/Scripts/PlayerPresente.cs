@@ -123,13 +123,14 @@ public class PlayerPresente : MonoBehaviour
 
     #region Coletaveis
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)//coletando lixo e destruindo
     {
         if (collision.CompareTag("LIXO"))
         {
-            Destroy(collision.gameObject);
+            
             //contItensColetaveis++;
             playerItens.quantidadeLixoPego++;
+            Destroy(collision.gameObject);
         }
     }
 
