@@ -19,10 +19,12 @@ MonoBehaviour:
   - actorName: WILL
     profile: {fileID: 21300000, guid: 10c19acd55980084a8a672808637f90d, type: 3}
     sentence:
-      portugues: "Recep\xE7\xE3o do parque"
+      portugues: "O Parque Nacional Cavernas do Perua\xE7u, foi criada em 1999, tem
+        uma \xE1rea de 56.448 hectares"
       english: 
   - actorName: Will
     profile: {fileID: 21300000, guid: 10c19acd55980084a8a672808637f90d, type: 3}
     sentence:
-      portugues: "\xC9 aqui onde as trilhas come\xE7am."
+      portugues: "compreende os munic\xEDpios de Janu\xE1ria e  Itacarambi , na regi\xE3o
+        norte de Minas Gerais."
       english: 

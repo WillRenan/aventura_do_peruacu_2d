@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a5c4fc01f3f874498c866ec31714c0, type: 3}
+  m_Name: LIXO 01
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  speakActorSprite: {fileID: 0}
+  sentence: 
+  dialogos:
+  - actorName: Will
+    profile: {fileID: 21300000, guid: 10c19acd55980084a8a672808637f90d, type: 3}
+    sentence:
+      portugues: Olha isso? Como podem deixar tanto liixo no parque!?
+      english: 
+  - actorName: Will
+    profile: {fileID: 21300000, guid: 10c19acd55980084a8a672808637f90d, type: 3}
+    sentence:
+      portugues: "N\xE3o vou deixar nenhum aqui! \xC9 bom eu come\xE7ar a olhar nos
+        cantinhos."
+      english: 
